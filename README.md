@@ -2,6 +2,18 @@
 
 This is a simple REST API for books built with Node.js, Express and Docker. It allows you to create, read, update and delete books from a mock database. It also provides an OpenAPI swagger page for documenting and testing the API.
 
+
+## Table of Contents
+
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Usage](#usage)
+- [Docker Installation](#docker-installation)
+- [API Reference](#aPI-reference)
+- [Acknowledgement](#acknowledgement)
+- [Contributing](#contributing)
+- [License](#License)
+
 ## Features
 
 - CRUD operations for books
@@ -17,34 +29,40 @@ This is a simple REST API for books built with Node.js, Express and Docker. It a
 
 ## Usage
 
-To use this app, you need to clone this repository and install the dependencies:
+To use this app without Docker, you need to clone this repository and install the dependencies:
 
 ```bash
 git clone https://github.com/username/book-api.git
 cd book-api
 npm install
 ```
-Then, you need to build a Docker image for the app:
 
+You can then run the app.js file to start the server.
+
+## Docker Installation
+
+You can use the predefined dockerfile/docker-compose files to build an image or you can access a ready version at [DockerHub](https://hub.docker.com/r/esammahdi/book_api). 
+
+Download the image using:
 ```bash
-docker build -t username/book-api:latest .
+docker pull esammahdi/book_api
 ```
 
-This will create an image called username/book-api with the tag latest. You can then run a container from this image:
+You can then run it using:
 
 ```bash
-docker run --name book-api-container -p 8080:8080 -d username/book-api:latest
+docker run --name book-api -p 8080:8080 -d esammahdi/book-api:1.0
 ```
 
-This will create and start a container called book-api-container from the username/book-api:latest image. The -p flag maps port 8080 of the container to port 8080 of the host machine. The -d flag runs the container in detached mode, meaning it runs in the background.
+This will create and start a container called book-api from the esammahdi/book-api:1.0 image. The -p flag maps port 8080 of the container to port 8080 of the host machine. The -d flag runs the container in detached mode, meaning it runs in the background.
 
-You can then open http://localhost:8080 in your browser and see your app running. You can also open http://localhost:8080/docs to see the OpenAPI swagger page for the API.
+You can then open http://localhost:8080 in your browser to see the OpenAPI swagger page for the API.
 
 To stop and remove the container, you can use these commands:
 
 ```bash
-docker stop book-api-container
-docker rm book-api-container
+docker stop book-api
+docker rm book-api
 ```
 
 ## API Reference
@@ -74,7 +92,10 @@ The book data has the following schema:
 
 For more details and examples, please refer to the OpenAPI swagger page at http://localhost:8080/
 
+## Acknowledgement
+
 ## Contributing
+This is a finished demo project so no need for contribution. But feel free to fork it and add what you want.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/esammahdi/book_api/blob/main/LICENSE) file for details
