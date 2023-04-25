@@ -93,7 +93,7 @@ The book data has the following schema:
 For more details and examples, please refer to the OpenAPI swagger page at http://localhost:8080/
 
 ## Acknowledgement
-
+This project was initiated with the help of Bing AI. It designed the initial OpenAPI document according to the instructions. Then I had it make a NodeJS file depending on it. I then had it modularize the file by spliting it into the files you see in this repo as well as helping in dockerizing the app. Yes there were mistakes but I also solved them with the help of the AI. The chatbot pulled from many other sources during the process, unfortunately they were lost when the page was reloaded.
 ## Contributing
 This is a finished demo project so no need for contribution. But feel free to fork it and add what you want.
 
